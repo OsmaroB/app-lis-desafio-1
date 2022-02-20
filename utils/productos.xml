@@ -3,8 +3,8 @@
   <producto>
     <codigo>PROD00001</codigo>
     <nombre>Camiseta 1</nombre>
-    <descripcion>Es una camiseta                                    </descripcion>
-    <img>PROD00001.jpg</img>
+    <descripcion>Es una camiseta                                                                                                                                                                                                                                                                                                </descripcion>
+    <img>Captura de pantalla (1).png</img>
     <categoria>Textil</categoria>
     <precio>9.99</precio>
     <existencias>9000</existencias>
@@ -145,13 +145,21 @@
     <existencias>500</existencias>
   </producto>
   <producto>
-    <codigo>PROD00452</codigo>
+    <codigo>PROD00045</codigo>
     <nombre>fjxcg</nombre>
-    <descripcion>fjgcx</descripcion>
-    <categoria>Textil</categoria>
-    <precio>20</precio>
-    <existencias>20</existencias>
-    <img>img</img>
+    <descripcion>dfdfdf</descripcion>
+    <categoria>Promocional</categoria>
+    <precio>3</precio>
+    <existencias>3</existencias>
+    <img>Captura de pantalla (4).png</img>
   </producto>
-  
+  <producto>
+    <codigo>PROD00012</codigo>
+    <nombre>45</nombre>
+    <descripcion>4545</descripcion>
+    <categoria>Textil</categoria>
+    <precio>45</precio>
+    <existencias>45</existencias>
+    <img>Captura de pantalla (3).png</img>
+  </producto>
 </productos>

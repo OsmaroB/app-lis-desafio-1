@@ -71,6 +71,31 @@ $descripcion;
             ');
             return;
         }
+        if($_POST['txtExistencias'] < 0){
+            print('
+            <div class="alert alert-danger" role="alert">
+                No puede agregar existencias negativas
+            </div>
+            ');
+            return;
+        }
+        if($_POST['txtPrecio'] < 0){
+            print('
+            <div class="alert alert-danger" role="alert">
+                No puede agregar precios negativos
+            </div>
+            ');
+            return;
+        }
+        if ((!strpos($_FILES['imagen']['type'], 'png') && !strpos($_FILES['imagen']['type'], 'jpg')))
+        {
+            print('
+            <div class="alert alert-danger" role="alert">
+                Solo puede seleccionar imagenes .png y .jpg
+            </div>
+            ');
+            return;
+        }
         foreach($productos->producto as $producto){
             if($producto->codigo == $_POST['txtCodigo']){
                 $producto->codigo = $_POST['txtCodigo'];
@@ -79,7 +104,7 @@ $descripcion;
                 $producto->categoria = $_POST['cmbCategoria'];
                 $producto->precio = $_POST['txtPrecio'];
                 $producto->existencias = $_POST['txtExistencias'];
-                $producto->img = $img;
+                $producto->img = saveImg();
                 break;
             }
         }

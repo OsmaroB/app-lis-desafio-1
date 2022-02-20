@@ -55,8 +55,33 @@ function add(){
             ');
             return;
         }
+        if($existencias < 0){
+            print('
+            <div class="alert alert-danger" role="alert">
+                No puede agregar existencias negativas
+            </div>
+            ');
+            return;
+        }
+        if($precio < 0){
+            print('
+            <div class="alert alert-danger" role="alert">
+                No puede agregar precios negativos
+            </div>
+            ');
+            return;
+        }
+        if ((!strpos($_FILES['imagen']['type'], 'png') && !strpos($_FILES['imagen']['type'], 'jpg')))
+        {
+            print('
+            <div class="alert alert-danger" role="alert">
+                Solo puede seleccionar imagenes .png y .jpg
+            </div>
+            ');
+            return;
+        }
 		//open xml file
-		$productos = simplexml_load_file('../utils/productos.xml');
+        $productos = simplexml_load_file('../utils/productos.xml');
 		$producto = $productos->addChild('producto');
 		$producto->addChild('codigo', $codigo);
 		$producto->addChild('nombre', $nombre);
@@ -64,7 +89,7 @@ function add(){
 		$producto->addChild('categoria', $categoria);
 		$producto->addChild('precio', $precio);
 		$producto->addChild('existencias', $existencias);
-		$producto->addChild('img', 'img');
+		$producto->addChild('img', saveImg());
         $dom = new DomDocument();
 		$dom->preserveWhiteSpace = false;
 		$dom->formatOutput = true;

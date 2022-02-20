@@ -4,7 +4,7 @@
             <h1 class="text-center">Modificar producto</h1>
         </div>
         <div class="col-12">
-            <form action="" method="post">
+            <form action="" method="post"  enctype="multipart/form-data">
                 <div class="form-row">
                     <div class="container">
                         <div class="row">
@@ -39,6 +39,12 @@
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Existencia</label>
                                     <input type="number" class="form-control" id="txtExistencias" name="txtExistencias" placeholder="Ejem: 10" value="<?= $GLOBALS['existencias']?>">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Default file input example</label>
+                                    <input class="form-control" type="file" id="imagen" name="imagen">
                                 </div>
                             </div>
                             <div class="col-12">
